@@ -1,0 +1,23 @@
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Wpedantic -std=c11 -pthread
+
+LDFLAGS = -pthread
+
+
+all: agent_040 controller_040
+
+
+agent_040: agent_040.c
+	$(CC) $(CFLAGS) -o agent_040 agent_040.c $(LDFLAGS)
+
+
+controller_040: controller_040.c
+	$(CC) $(CFLAGS) -o controller_040 controller_040.c $(LDFLAGS)
+
+
+clean:
+	rm -f agent_040 controller_040
+
+
+.PHONY: all clean
